@@ -65,8 +65,8 @@ rm_mv () {
     if [[ -f $TRASH_FILE/$file_name ]]; then
       file_type=${file_name##*\.}
       raw_name=${file_name%.*}
-      echo file_type:$file_type
-      echo raw_name:$raw_name
+      # echo file_type:$file_type
+      # echo raw_name:$raw_name
       trash_dest_name="$raw_name.2.$file_type"
       echo -e "\033[32m==>\033[0m Note: $file_name is already existing in trash! Rename it as $trash_dest_name"
     else
@@ -118,10 +118,9 @@ while [ $# -ne 0 ];do
 	file=$1
 	rm_mv $file
   # delete the directory
-  echo "while file= $file"
   if [[ -d $file ]]; then
     rm -r $file
-    echo "Remove Directory $file"
+    # echo "Remove Directory $file"
   fi
 	shift
 done
